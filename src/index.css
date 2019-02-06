@@ -1,0 +1,134 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+
+  justifyContent: center;
+  alignContent: center;
+  alignItems: center;
+
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.wrapper > * {
+  /*padding: 10px;*/
+  /*margin: auto;*/
+  flex: 1 100%;
+}
+
+.header {
+  /*background: tomato;*/
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+
+.footer {
+  /*background: lightgreen;*/
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+}
+
+.main {
+  text-align: left;
+  /*background: deepskyblue;*/
+  height: 80vh;
+}
+
+.aside-1 {
+  width: 2%;
+  /*background: gold;*/
+  height: 80vh;
+}
+
+.aside-2 {
+  /*background: hotpink;*/
+  height:80vh;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 auto; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 8 0px; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  background: #34e89e;
+  background: -webkit-linear-gradient(to right, #34e89e, #0f3443);
+  background: linear-gradient(to right, #34e89e, #0f3443);
+
+  color: white;
+}
+
+.fenInput {
+  margin: 25px 5px;
+  width: 60%;
+}
+
+.btnZoom {
+  transition: transform .2s;
+}
+
+.btnZoom:hover {
+  transform: scale(1.5);
+}
+
+#flipArrows {
+  animation-name: rotate;
+  animation-duration: 700ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-play-state: paused;
+  transform-origin: center;
+}
+
+svg:hover #flipArrows {
+  animation-play-state: running;
+}
+
+/*<circle id="Oval-18" fill="#133700" cx="79" cy="64" r="4"></circle>
+<circle id="Oval-18-Copy" fill="#133701" cx="120" cy="45" r="4"></circle>*/
+
+#left-cog {
+  animation-name: rotate;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+  /*transform-origin: 50% 50%;*/
+  transform-origin: 23.99px 42.66px;
+}
+
+#right-cog {
+  animation-name: rotate;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+  animation-play-state: running;
+  /*transform-origin: 50% 50%;*/
+  transform-origin: 64.54px 23.88px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
